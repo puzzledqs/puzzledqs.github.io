@@ -1,0 +1,168 @@
+
+<!-- saved from url=(0062)http://mmlab.ie.cuhk.edu.hk/archive/project/coherentfiltering/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Coherent Filtering</title>
+
+<style type="text/css">
+BODY {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 100% "Times New Roman", Times, serif; BACKGROUND: #888888; COLOR: #000; PADDING-TOP: 0px
+}
+.oneColFixCtr #container {
+	BORDER-BOTTOM: #000000 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #000000 1px solid; MARGIN: 0px auto; WIDTH: 1000px; BACKGROUND: #ffffff; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid
+}
+.oneColFixCtr #mainContent {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 0px
+}
+.style3 {
+	FONT-SIZE: small
+}
+.style5 {
+	FONT-SIZE: large; FONT-WEIGHT: bold
+}
+.style6 {
+	FONT-SIZE: large
+}
+.style7 {
+	TEXT-DECORATION: none
+}
+.style8 {
+	COLOR: #000000
+}
+.style9 {
+	COLOR: #000080
+}
+.style10 {
+	MARGIN-TOP: 5pt; MARGIN-BOTTOM: 5pt; FONT-SIZE: medium
+}
+.style11 {
+	MARGIN-TOP: 5pt; TEXT-INDENT: 15px; MARGIN-BOTTOM: 5pt; FONT-SIZE: medium
+}
+.style12 {
+	MARGIN-LEFT: 12pt; FONT-SIZE: medium; MARGIN-RIGHT: 12pt}
+.code {
+	FONT-FAMILY: "Courier New", Courier, monospace; FONT-SIZE: 15px
+}
+.codeline {
+	MARGIN-TOP: 5pt; TEXT-INDENT: 15px; FONT-FAMILY: "Courier New", Courier, monospace; MARGIN-BOTTOM: 5pt; FONT-SIZE: 15px
+}
+.DivCode {
+	BORDER-BOTTOM: #333 1px dashed; BORDER-LEFT: #333 1px dashed; WIDTH: 800px; BACKGROUND: #ffd; MARGIN-LEFT: 10pt; FONT-SIZE: medium; BORDER-TOP: #333 1px dashed; BORDER-RIGHT: #333 1px dashed
+}
+.auto-style5 {
+	MARGIN-TOP: 3pt; MARGIN-BOTTOM: 3pt; FONT-SIZE: 100%
+}
+.STYLE15 {FONT-SIZE: large; FONT-WEIGHT: bold; color: #FF0000; }
+</style>
+
+<meta name="GENERATOR" content="MSHTML 8.00.7601.17744"><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style></head>
+<body class="oneColFixCtr">
+<div id="container">
+<div style="MARGIN-BOTTOM: 0pt" id="mainContent">
+  <h1 style="MARGIN-TOP: 20pt" align="center">Visual Semantic Complex Network for Web Images</h1>
+  <p style="MARGIN-TOP: 20pt" class="style6" align="center"><span class="style8">Shi Qiu<sup>1</sup>, </span> <span class="style6" style="MARGIN-TOP: 20pt">Xiaoou Tang<sup>1,3</sup></span>, and <span class="style6" style="MARGIN-TOP: 20pt">Xiaogang Wang<sup>2,3</sup></span></p>
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center"><sup>1</sup>Department of Informaiton Engineering,  <sup>2</sup>Department of Electronic Engineering, The Chinese University of Hong Kong </p>
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center"><sup>3</sup>Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences </p>
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
+</div>
+<div class="style12">
+  <h2>1. Introduction</h2>
+
+    <p align="justify">Modeling the relevance of web images is an essential task for many applications such as image retrieval, clustering, and browsing.
+					Textual (e.g. surrounding texts + keyword index) or visual (e.g. various visual descriptors + ANN algorithms) approaches are only
+					effective within a small local region in textual feature space (e.g. under the same keyword index) or visual feature space
+					(e.g. near-duplicate images), and are rather restrictive for most of the aforementioned tasks. </p>
+	<p align="justify">This work tries to provide a top-down solution by structuring the web images into a Visual Semantic Complex Network (VSCN)
+					(illustrated in Figure 1). Our key observations are: 1) images on the web tend to form visually and semantically compact
+					clusters which reflect the common interest of human, and 2) the said image clusters are correlated with each other to different degrees.
+					In our VSCN, these compact clusters are used as the elementary units for structuring the web images. Concretely, we represent
+					the image clusters as nodes (which we name as semantic concepts) and their correlations are accounted for by the edges of the
+					network. Currently, our VSCN consists of 33,240 semantic concepts and indexes around 10 million web images. </p>
+    <p align="center"><img src="./img/vsg2.jpg" width="400"></p>
+    <p align="center">Figure 1: Illustration of the VSCN. T and V are textual and visual descriptors for a semantic concept.</p>
+    <p align="justify">We first present our automatic approach of structuring the web images, followed by a study on the structural properties of
+						the constructed network that reveal some meaningful observations. To further demonstrate the use of this network, we apply
+						it to two practical applications and show encouraging results. </p>
+
+</div>
+
+<div class="style12">
+  <h2>2. Approach Overview</h2>
+  <p align="justify">The main pipeline of our approach is illustrated in Figure 2. As a preliminary study, we start with 2,000 top textual queries
+					from Bing image search engine. We automatically discover 33,240 semantic concepts by jointly using the image contents and their
+					surrounding texts which we collected the search engine and the web (Figure 2(b)). Each semantic concept has a textual name and
+					the top 300 images gathered from the image search engine are taken as its exemplar set. Textual and visual descriptors are then
+					built for the semantic concepts (Figure 2(c)), based on which, the semantic and visual correlations are further computed. At last,
+					we fuse the two types of correlations and construct a K-NN network.</p>
+  <p align="center"><img src="./img/flowchart.jpg"> </p>
+  <p align="center">Figure 2: Flowchart of VSCN construction </p>
+</div>
+<div class="style12">
+<h2>3. VSCN Structures </h2>
+	<p align = "justify">We explore several structural properties of the constructed VSCN so that we can have a better macroscopic understanding of
+						this huge network.</p>
+	<p align = "justify">We first look into the connectivity of the VSCN. Figure 3 shows that when K (neighborhood size) goes to 20, a great connected
+						component emerges that contains 96% of the VSCN. In the meantime, the average shortest path length drops below 6.4. This means
+						most nodes on the network are reachable within a few hops, and it’s possible to efficiently explore the VSCN by following its
+						edges (e.g. Figure 4). Note that the curves become flat after K reaches 20. We thus fix K to 20 in the following. </p>
+	<p align="center"><img src="./img/connectivity.jpg" width = "400"></p>
+	<p align="center">Figure 3: Size and the average shortest path length of the largest connected component on the VSCN.</p>
+	<p align="center"><img src="./img/imagepath.jpg" width = "500"></p>
+	<p align="center">Figure 4: The path that connects the concept of “apple laptop” to “disney logo”. Such paths are potentially helpful for
+					informational search.</p>
+	<p align = "justify">Next, we study the in-degree distribution of the VSCN. The nodes have identical out-degrees (K=20), but their in-degrees
+						differ widely from 0 to 500. In general, representative and popular concepts (e.g. ferrari car, psp game) are of high in-degrees,
+						and form hub structures. Uncommon concepts (e.g. geodesic dome) form isolated concepts with zero in-degree. Figure 5 shows part
+						of the VSCN overlaid with names of 100 concepts with large in-degrees. Several semantic regions can be observed.</p>
+	<p align="center"><img src="./img/indegree.jpg"></p>
+	<p align="center">Figure 5: In-degree distribution and cumulative frequency.</p>
+	<p align = "justify">Another property of our interest is the community structure on the network. We run a hierarchical clustering algorithm and
+						cluster the nodes on the VSCN into 5,000 groups. As shown in Figure 6, most concepts belong to a community with size > 1.
+						These tightly connected clusters aggregate together the potentially relevant images, and are beneficial for image retrieval tasks.</p>
+	<p align="center"><img src="./img/community.jpg" width = "600"></p>
+	<p align="center">Figure 6:  (a) and (b) Two communities, wallpaper and sports cars, on the VSCN. (c) Rank of cluster size. (d) Distribution
+					of cluster size.</p>
+	<p align = "justify"> The following video gives a quick demonstration of the VSCN structures. </p>
+	<table width="200" height="342" border="1" align="center">
+      <tbody><tr>
+        <td><iframe width="640" height="480" src="http://www.youtube.com/embed/GeSuDp-jrhs?rel=0" frameborder="0" allowfullscreen></iframe>
+        <p>Demonstration of structures of the Visual Semantic Complex Network (VSCN)</a></p></td>
+      </tr>
+    </tbody></table>
+</div>
+
+<div class="style12">
+<h2>4. Applications </h2>
+	<p align = "justify">We first apply the VSCN to the task of content-based image retrieval. The following flowchart, as well as the demo, gives
+						a high-level idea of how we can exploit the structure information of VSCN to improve the current image retrieval methods.</p>
+	<p align="center"><img src="./img/retrieval.jpg"></p>
+	<p align="center">Figure 7: Flowchart of our VSCN-based image retrieval.</p>
+	<table width="200" height="342" border="1" align="center">
+      <tbody><tr>
+        <td><iframe width="640" height="480" src="http://www.youtube.com/embed/RT-nMF7tAlk?rel=0" frameborder="0" allowfullscreen></iframe>
+        <p>Illustration of our content-based image retrieval method & Sample results </p></td>
+      </tr>
+    </tbody></table>
+	<p>Quantitative experiments validate the advantages of using the VSCN.</p>
+	<p align="center"><img src="./img/ap_new.jpg"></p>
+	<p align="center">Figure 8: Retrieval performance of our approach (ITQ hasing + VSCN) and the baseline method (ITQ hasing).
+					(a) Average precision on the 10K query dataset. (b) Average precision on the difﬁcult and easy datasets.</p>
+
+	<p align="justify">The VSCN also inspires a novel and effective image browsing scheme. The scheme bridge different local image spaces by
+					allowing users to browse along edges of the VSCN (illustrated in Figure 9). A video demo is also provided. We demonstrate
+					the effectiveness of our browsing scheme by conducting a user study in the task of interactive navigational image search. </p>
+	<p align="center"><img src="./img/twospace.jpg"></p>
+	<p align="center">Figure 9: Browsing across query spaces and local concept spaces. Two browsing paths connecting the query spaces of apple and
+						palm are highlighted. When users click apple iphone in the query space of apple, the local concept space is shown, with two
+						more neighboring concepts, namely htc diamond and palm pixi. Exemplar images and visual transitions (indicated by red dashed
+						lines) are also displayed. Users can further enter the query space of palm by clicking on the concept of palm pixi. The case
+						is similar if users click apple tree.</p>
+	<table width="200" height="342" border="1" align="center">
+      <tbody><tr>
+        <td><iframe width="640" height="480" src="http://www.youtube.com/embed/e-gu6IcSy9o?rel=0" frameborder="0" allowfullscreen></iframe></iframe>
+        <p>Demonstration of our image browsing scheme with VSCN</p></td>
+      </tr>
+    </tbody></table>
+</div>
+<p style="MARGIN-TOP: 30px; MARGIN-BOTTOM: 30px" class="style11" align="left">
+Last  update: Nov 26, 2013 </p>
+</div></div>
+</body></html>

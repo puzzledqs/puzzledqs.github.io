@@ -1,0 +1,506 @@
+<html class="gr__mmlab_ie_cuhk_edu_hk"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<meta name="Generator" content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:����;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:����;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@����";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"ҳü Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	layout-grid-mode:char;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"ҳ�� Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:21.0pt;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";}
+span.apple-style-span
+	{mso-style-name:apple-style-span;}
+span.Char
+	{mso-style-name:"ҳü Char";
+	mso-style-link:ҳü;}
+span.Char0
+	{mso-style-name:"ҳ�� Char";
+	mso-style-link:ҳ��;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+<link type="text/css" rel="stylesheet" href="chrome-extension://ckphchjljlekndhjifdfpmmnlaijimcd/style.css"><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body bgcolor="#BBDFBB" lang="ZH-CN" link="blue" vlink="purple" style="text-justify-trim:
+punctuation" data-gr-c-s-loaded="true" screen_capture_injected="true">
+
+<div class="WordSection1" style="layout-grid:15.6pt">
+
+<p class="MsoNormal" align="center" style="text-align:center"><b><span lang="EN-US" style="font-size:24.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">CUHK-Search-Reranking
+(CUHKSR) Dataset</span></b></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt"><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span></span></b><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Overview</span></b><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><br>
+CUHK-Search-Reranking (CUHKSR) dataset is for research on image re-ranking.</span></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="margin-left:-.4pt;border-collapse:collapse;border:none">
+ <tbody><tr style="height:13.5pt">
+  <td nowrap="" rowspan="2" valign="top" style="border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Data
+  set</span></p>
+  </td>
+  <td nowrap="" colspan="3" valign="top" style="border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Images
+  for re-ranking</span></p>
+  </td>
+  <td nowrap="" colspan="2" valign="top" style="border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Images
+  of reference classes</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.5pt">
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">#
+  Keywords</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Collecting
+  date</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Search
+  engine</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Collecting
+  date</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Search
+  engine</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.5pt">
+  <td nowrap="" valign="top" style="border:solid windowtext 1.0pt;border-top:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">I</span></p>
+  </td>
+  <td nowrap="" rowspan="2" valign="top" style="border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">120</span></p>
+  </td>
+  <td nowrap="" rowspan="2" valign="top" style="border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Jul-10</span></p>
+  </td>
+  <td nowrap="" rowspan="2" valign="top" style="border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Bing</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Jul-10</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Bing</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.5pt">
+  <td nowrap="" valign="top" style="border:solid windowtext 1.0pt;border-top:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">II</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Jul-10</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Google</span></p>
+  </td>
+ </tr>
+ <tr style="height:13.5pt">
+  <td nowrap="" valign="top" style="border:solid windowtext 1.0pt;border-top:none;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">III</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">10</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Aug-09</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Bing</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Jul-10</span></p>
+  </td>
+  <td nowrap="" valign="top" style="border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.5pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">Bing</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><br>
+Note: </span></p>
+
+<p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">1)
+The images for re-ranking are the same in data set I and II</span></p>
+
+<p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">2)
+The images of reference classes in data set III are the same with those in data
+set I<br>
+<br>
+</span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt"><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span></span></b><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Downloads</span></b><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><br>
+The dataset can be downloaded from following FTP:<br>
+Url: 137.189.35.203<br>
+Port: 21<br>
+Username: <span class="apple-style-span"><span style="color:black">CUHKSRData<br>
+Password: fc4lmge<br>
+<br>
+</span></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt"><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span></span></b><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Reference</span></b><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><br>
+Please cite as:<br>
+<span class="apple-style-span"><span style="color:black">X. Wang, K. Liu and X.
+Tang, "Query-Specific Visual Semantic Spaces for Web Image Re-ranking",</span></span><span class="apple-converted-space"><span style="color:black">&nbsp;</span></span><span class="apple-style-span"><i><span style="color:black">in Proceedings of IEEE
+Computer Society Conference on Computer Vision and Patter Recognition</span></i></span><span class="apple-converted-space"><i><span style="color:black">&nbsp;</span></i></span><span class="apple-style-span"><span style="color:black">(CVPR) 2011.</span></span><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><br>
+<br>
+<span class="apple-style-span"><span style="color:black">X. Wang, S. Qiu, K. Liu, and X.
+Tang, "Web Image Re-Ranking Using Query-Specific Semantic Signatures",</span></span><span class="apple-converted-space"><span style="color:black">&nbsp;</span></span><span class="apple-style-span"><i><span style="color:black">
+IEEE Transactions on Pattern Analysis and Machine Intelligence</span></i></span><span class="apple-converted-space"><i><span style="color:black">&nbsp;</span></i></span><span class="apple-style-span"><span style="color:black">(PAMI) 2013. [</span></span><span lang="EN-US"><a href="http://mmlab.ie.cuhk.edu.hk/archive/CUHKSR/Project.htm"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Project Website</span></a></span><span class="apple-style-span"><span lang="EN-US" style="font-size:14.0pt;font-family:
+&quot;Times New Roman&quot;,&quot;serif&quot;;color:black">]</span></span><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><br>
+<br>
+</span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt"><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span></span></b><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Data
+Description</span></b><span lang="EN-US" style="font-size:14.0pt;font-family:
+&quot;Times New Roman&quot;,&quot;serif&quot;"><br>
+Note: Each zip file contains 120 folders, corresponding to 120 query keywords.<br>
+<br>
+</span></p>
+
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" width="1175" style="width:881.25pt;margin-left:4.7pt;border-collapse:collapse;border:none">
+ <tbody><tr>
+  <td width="348" valign="top" style="width:261.35pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b><span lang="EN-US" style="font-size:14.0pt;font-family:
+  &quot;Times New Roman&quot;,&quot;serif&quot;">Data</span></b></p>
+  </td>
+  <td width="326" valign="top" style="width:244.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b><span lang="EN-US" style="font-size:14.0pt;font-family:
+  &quot;Times New Roman&quot;,&quot;serif&quot;">File Name</span></b></p>
+  </td>
+  <td width="85" valign="top" style="width:63.8pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b><span lang="EN-US" style="font-size:14.0pt;font-family:
+  &quot;Times New Roman&quot;,&quot;serif&quot;">File Size</span></b></p>
+  </td>
+  <td width="416" valign="top" style="width:11.0cm;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b><span lang="EN-US" style="font-size:14.0pt;font-family:
+  &quot;Times New Roman&quot;,&quot;serif&quot;">Description</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="348" valign="top" style="width:261.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Images
+  for re-ranking in data set I and II</span></p>
+  </td>
+  <td width="326" valign="top" style="width:244.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">BingReRanking(set
+  I and II).zip</span></p>
+  </td>
+  <td width="85" valign="top" style="width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">~900Mb</span></p>
+  </td>
+  <td width="416" valign="top" style="width:11.0cm;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Within
+  each query's folder, there're two folders: Data and Images. </span></p>
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The
+  Images folder contains the ~1000 images (resized to be 160*160 at most).
+  These images files are named as XXXXimage.jpg, where XXXX is a 4-digit ID for
+  the image (e.g., 0000image.jpg, 0001image.jpg, etc.) </span></p>
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The
+  Data folder contains two files: Metadata.txt and Labels.txt. Their
+  formats&nbsp; can be found </span><span lang="EN-US"><a href="http://mmlab.ie.cuhk.edu.hk/archive/CUHKSR/Dataset.htm#format"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">below</span></a></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="348" valign="top" style="width:261.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Webpages
+  of images for re-ranking in data set I and II</span></p>
+  </td>
+  <td width="326" valign="top" style="width:244.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">BingReRanking_Htmls(set
+  I and II).zip</span></p>
+  </td>
+  <td width="85" valign="top" style="width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">~3.6Gb</span></p>
+  </td>
+  <td width="416" valign="top" style="width:11.0cm;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The
+  webpages are placed under Htmls folder, named as XXXXtext.html (e.g.
+  0001text.html)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="348" valign="top" style="width:261.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Images
+  for re-ranking in data set III</span></p>
+  </td>
+  <td width="326" valign="top" style="width:244.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">BingReRanking(set
+  III).zip</span></p>
+  </td>
+  <td width="85" valign="top" style="width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">~180Mb</span></p>
+  </td>
+  <td width="416" valign="top" style="width:11.0cm;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The
+  organization of data is the same as Images for re-ranking in data set I and
+  II</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="348" valign="top" style="width:261.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Webpages
+  of images for re-ranking in data set III</span></p>
+  </td>
+  <td width="326" valign="top" style="width:244.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">BingReRanking_Htmls(set
+  III).zip</span></p>
+  </td>
+  <td width="85" valign="top" style="width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">~370Mb</span></p>
+  </td>
+  <td width="416" valign="top" style="width:11.0cm;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The
+  organization of data is the same as Webpages of images for re-ranking in
+  data set I and II</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="348" valign="top" style="width:261.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Metadata
+  of Images of reference classes in data set I</span></p>
+  </td>
+  <td width="326" valign="top" style="width:244.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">BingRef_Metadata(set
+  I).zip</span></p>
+  </td>
+  <td width="85" valign="top" style="width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">~240Mb</span></p>
+  </td>
+  <td width="416" valign="top" style="width:11.0cm;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Within
+  each query's folder, there're ~30 txt files. </span></p>
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Each
+  txt file is named by a query keyword expansion, and its format is the same as
+  metadata file for images for re-ranking.<br>
+  The images of reference classes are not available for downloading as they
+  take up too much space (&gt;6Gb). They can be downloaded from Internet via
+  the urls given in the metadata.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="348" valign="top" style="width:261.35pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Metadata
+  of Images of reference classes in data set II</span></p>
+  </td>
+  <td width="326" valign="top" style="width:244.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">GoogRef_Metadata(set
+  II).zip</span></p>
+  </td>
+  <td width="85" valign="top" style="width:63.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">~200Mb</span></p>
+  </td>
+  <td width="416" valign="top" style="width:11.0cm;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The
+  organization of data is the same as Images of reference classes in data set
+  I</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt"><a name="format"><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span></span></b><b><span lang="EN-US" style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Format</span></b></a></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">a)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Metadata.txt<br>
+The metadata of each image takes up three lines, followed by a blank line. The
+three lines are: ID, image url and the url of page containing the image.
+Following is an example:<br>
+<br>
+<i>0000<br>
+</i></span><span lang="EN-US"><a href="http://www.usageorge.com/Wallpapers/Computer/wallpaper/Apple-Macintosh.jpg"><i><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">http://www.usageorge.com/Wallpapers/Computer/wallpaper/Apple-Macintosh.jpg</span></i></a></span><i><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><br>
+</span></i><span lang="EN-US"><a href="http://www.usageorge.com/Wallpapers/Computer/Apple-Macintosh.html"><i><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">http://www.usageorge.com/Wallpapers/Computer/Apple-Macintosh.html</span></i></a></span><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><br>
+<br>
+</span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">b)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Labels.txt<br>
+Labels.txt contains the labeled ground truth results of the images. It looks
+like<br>
+<br>
+<i>0000<br>
+apple wallpaper<br>
+apple logo<br>
+<br>
+0001<br>
+red apple</i><br>
+<br>
+which means that image 0000 is categorized into "apple wallpaper" and "apple
+logo" (an image may be categorized into multiple classes), while image 0001 is
+categorized into "red apple". Note that the ids in Labels.txt may not be in alphabetical
+order.<br>
+<br>
+</span></p>
+
+</div>
+
+
+
+
+<iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" src="./Dataset_files/saved_resource.html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:false,&quot;ss&quot;:true}"></div></body></html>
